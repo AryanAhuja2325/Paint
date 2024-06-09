@@ -3,7 +3,9 @@ body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 .container {
@@ -11,39 +13,100 @@ body {
     display: flex;
 }
 
+#holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #toolbar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 10px;
     width: 70px;
-    background-color: #202020;
+    background-color: black;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 #toolbar * {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 #toolbar label {
     font-size: 12px;
+    color: #333;
 }
 
 #toolbar input {
     width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
 }
 
-#toolbar button {
-    background-color: #1565c0;
+#toolbar button,
+#open,
+.toggle {
+    background-color: #e0e0e0;
     border: none;
     border-radius: 4px;
-    color: white;
-    padding: 2px;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#open {
-    background-color: #1565c0;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 2px;
+#toolbar button i {
+    font-size: 18px;
+}
+
+#toolbar button:hover,
+#open:hover,
+.toggle:hover {
+    background-color: #d0d0d0;
+}
+
+#toolbar .toggle.selected {
+    background-color: lightpink;
+    color: #fff;
+}
+
+/* Custom styling for file input */
+#fileInputContainer {
+    position: relative;
     width: 100%;
+}
+
+#fileInputContainer input[type="file"] {
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#fileInputContainer label {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#fileInputContainer label:hover {
+    background-color: #d0d0d0;
 }
