@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/0f3d8378e4.js" crossorigin="anonymous"></script>
-    <title>Drawing App</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>DrawEZ</title>
 </head>
 
 <body>
@@ -15,9 +16,15 @@
         <div class="holder">
             <div id="toolbar">
                 <input id="stroke" name='stroke' type="color" title="Pick Stroke Color">
+                <input id="widthPicker" name='widthPicker' type="range" min="1" max="50" value="5"
+                    title="Pick Stroke Width">
+                <button id="pointer" class="toggle" title="Pointer"></button>
                 <button id="draw" class="toggle" title="Draw"><i class="fa-solid fa-paintbrush"></i></button>
+                <button id="line" class="toggle" title="Line"><i class="fas fa-ruler-vertical"></i></button>
+                <button id="arrow" class="toggle" title="Arrow"><i class="fas fa-arrow-right"></i></button>
                 <button id="square" class="toggle" title="Draw Square"><i class="fa-regular fa-square"></i></button>
                 <button id="circle" class="toggle" title="Draw Circle"><i class="fa-regular fa-circle"></i></button>
+                <button id="eraser" class="toggle" title="Eraser"><i class="fas fa-eraser"></i></button>
                 <button id="text" class="toggle" title="Insert Text"><i class="fa-solid fa-font"></i></button>
                 <button id="clear" title="Clear Canvas"><i class="fa-solid fa-trash"></i></button>
                 <button id="save" title="Save Canvas"><i class="fa-regular fa-floppy-disk"></i></button>
@@ -25,6 +32,7 @@
                     <input type="file" id="open">
                     <label for="open" title="Open File"><i class="fa-regular fa-folder-open"></i></label>
                 </div>
+
             </div>
         </div>
         <div class="canvas">
